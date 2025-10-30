@@ -1,0 +1,331 @@
+.about {
+  min-height: 100vh;
+  background: var(--bg-color);
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === About Me Top Heading (Above Section) === */
+.about-me-top {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'lato', sans-serif;
+}
+
+.about-me-top .about-heading-with-arrow {
+  justify-content: center;
+}
+
+/* === Company Intro === */
+.company-intro-text {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.company-intro-text p {
+  color: var(--text-color);
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin: 0;
+  font-family: 'lato', sans-serif;
+}
+
+.company-intro-text strong {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* === Layout === */
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* === LEFT SIDE === */
+.company-snapshot-left {
+  background: rgba(255, 111, 0, 0.05);
+  border: 2px solid var(--accent-color);
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 15px rgba(255, 111, 0, 0.2);
+}
+
+.snapshot-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.snapshot-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.snapshot-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(255, 111, 0, 0.2);
+}
+
+.snapshot-row:last-child {
+  border-bottom: none;
+}
+
+.snapshot-label {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.snapshot-value {
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.status-active {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.website-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.website-link:hover {
+  color: #ff9800;
+}
+
+.leader-item {
+  margin-bottom: 0.5rem;
+}
+
+/* === RIGHT SIDE === */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* === ABOUT ME SECTION === */
+.about-me-plain {
+  padding: 0;
+  margin-bottom: 2rem;
+  font-family: 'lato', sans-serif;
+}
+
+.about-heading-with-arrow {
+  color: var(--accent-color);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.arrow-icon {
+  color: var(--accent-color);
+  font-size: 1.4rem;
+  transform: translateY(2px);
+}
+
+.about-me-plain p {
+  color: var(--text-color);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 1.2rem;
+}
+
+/* === VISION & MISSION ONE BELOW ANOTHER === */
+.vision-mission-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #ff9800;
+  border-radius: 15px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  background: rgba(255, 111, 0, 0.05);
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 111, 0, 0.2);
+}
+
+.info-box h3 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* === Arrow heading for Vision & Mission === */
+.heading-with-arrow {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.heading-with-arrow .arrow-icon {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+  transform: translateY(1px);
+}
+
+.info-box p {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .snapshot-row {
+    grid-template-columns: 150px 1fr;
+  }
+
+  .snapshot-title {
+    font-size: 1.8rem;
+  }
+
+  .company-intro-text p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1.5rem;
+  }
+
+  .company-intro-text {
+    padding: 0 1rem;
+  }
+
+  .company-intro-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .snapshot-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .snapshot-label {
+    font-size: 1rem;
+  }
+
+  .snapshot-value {
+    font-size: 0.95rem;
+  }
+
+  .about-heading-with-arrow {
+    font-size: 1.6rem;
+  }
+
+  .arrow-icon {
+    font-size: 1.2rem;
+  }
+
+  .about-me-plain p {
+    font-size: 1rem;
+  }
+
+  .info-box {
+    padding: 1.8rem;
+  }
+
+  .info-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .info-box p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 3rem 1rem;
+  }
+
+  .company-intro-text {
+    margin-bottom: 2rem;
+  }
+
+  .company-intro-text p {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+
+  .snapshot-title {
+    font-size: 1.5rem;
+  }
+
+  .snapshot-row {
+    grid-template-columns: 1fr;
+    padding: 0.8rem 0;
+  }
+
+  .snapshot-label {
+    font-size: 0.9rem;
+  }
+
+  .snapshot-value {
+    font-size: 0.9rem;
+  }
+
+  .about-heading-with-arrow {
+    font-size: 1.4rem;
+  }
+
+  .info-box {
+    padding: 1.5rem;
+  }
+
+  .info-box h3 {
+    font-size: 1.3rem;
+  }
+
+  .info-box p {
+    font-size: 0.9rem;
+  }
+
+  .vision-mission-container {
+    gap: 1.5rem;
+  }
+}

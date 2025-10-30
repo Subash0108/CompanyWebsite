@@ -1,0 +1,403 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ==============================
+   HERO SECTION BASE
+============================== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color); /* ✅ THEME VARIABLE */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: var(--text-color); /* ✅ THEME VARIABLE */
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Background Gradient */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom right,
+    var(--gradient-start, #000000),
+    var(--gradient-end, rgba(0, 0, 0, 0.8))
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ✅ Theme color variables for dark/light */
+:root {
+  --gradient-start: #f7f7f7;
+  --gradient-end: #eaeaea;
+  --circle-border-color: rgba(0, 0, 0, 0.2); /* visible on light mode */
+}
+
+[data-theme="dark"] {
+  --gradient-start: #000000;
+  --gradient-end: rgba(0, 0, 0, 0.8);
+  --circle-border-color: rgba(255, 255, 255, 0.3); /* visible on dark mode */
+}
+
+/* Hero Images */
+.hero-image {
+  position: absolute;
+  width: 10rem;
+  height: 12rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 3px solid var(--accent-color); /* ✅ THEME VARIABLE */
+  z-index: 5;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-image-top-left {
+  top: 3rem;
+  left: 3rem;
+}
+
+.hero-image-top-right {
+  top: 3rem;
+  right: 3rem;
+}
+
+.hero-image-bottom-left {
+  bottom: 3rem;
+  left: 3rem;
+}
+
+.hero-image-bottom-right {
+  bottom: 3rem;
+  right: 3rem;
+}
+
+.hero-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Main Content */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  max-width: 90%;
+  margin-top: 100px;
+}
+
+.hero-title {
+  position: relative;
+  top: 65px;
+  font-size: medium;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-family: 'lato', sans-serif;
+}
+
+.hero-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-weight: 900;
+}
+
+.hero-link:hover {
+  color: var(--accent-color);
+}
+
+.hero-highlight {
+  color: var(--accent-color);
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 112vh;
+}
+
+.hero-description {
+  color: var(--text-color);
+  max-width: 42rem;
+  font-size: 3rem;
+  line-height: 1.6;
+  margin-top: 60px;
+}
+
+/* Badge */
+.hero-badge {
+  position: absolute;
+  top: 3rem;
+  right: 5rem;
+  color: white;
+  font-weight: 700;
+  padding: 1.2rem 1.8rem;
+  border-radius: 9999px;
+  text-align: center;
+  line-height: 1.3;
+  z-index: 10;
+  font-size: 1rem;
+}
+
+/* Scroll Indicator */
+.hero-scroll {
+  position: absolute;
+  bottom: 3rem;
+  z-index: 10;
+  animation: bounce 2s infinite;
+}
+
+/* ================= Static Circle Text ================= */
+.hero-circle {
+  position: absolute;
+  bottom: 0rem;
+  left: 44%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  border: 1px solid var(--circle-border-color); /* ✅ THEME BASED BORDER */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  animation: rotateClockwise 12s linear infinite;
+}
+
+@keyframes rotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-circle:hover {
+  animation-play-state: paused;
+}
+
+/* Pink Square in the Center */
+.circle-center {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ff0055;
+  border-radius: 5px;
+  position: relative;
+}
+
+.circle-center::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 14px;
+  height: 14px;
+  background: #ff0055;
+  border-radius: 2px;
+}
+
+/* Text Around the Circle */
+.circle-svg {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform: rotate(0deg);
+  font-family: "Poppins", sans-serif;
+  pointer-events: none;
+}
+
+text {
+  text-transform: uppercase;
+  font-weight: 400;
+  fill: var(--text-color);
+}
+
+/* ====== NGS BACKGROUND TEXT ====== */
+.hero-bg-text {
+  position: fixed;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20vw;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  opacity: 0.12;
+  user-select: none;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero-circle {
+    width: 150px;
+    height: 150px;
+    bottom: 1rem;
+  }
+
+  .circle-center {
+    width: 20px;
+    height: 20px;
+  }
+
+  .circle-svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  text {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 4rem;
+  }
+
+  .hero-image {
+    width: 12rem;
+    height: 14rem;
+  }
+
+  .hero-title {
+    font-size: 4.1rem;
+  }
+
+  .hero-description {
+    font-size: 3rem;
+  }
+
+  .hero-badge {
+    font-size: 1.1rem;
+    padding: 1.3rem 2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 6rem;
+  }
+
+  .hero-image {
+    width: 15rem;
+    height: 18rem;
+  }
+
+  .hero-title {
+    font-size: 4.1rem;
+  }
+
+  .hero-description {
+    font-size: 3rem;
+  }
+
+  .hero-badge {
+    font-size: 1.2rem;
+    padding: 1.5rem 2.2rem;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 640px) {
+  .hero-image {
+    width: 7rem;
+    height: 9rem;
+  }
+
+  .hero-image-top-left,
+  .hero-image-top-right {
+    top: 2rem;
+  }
+
+  .hero-image-bottom-left,
+  .hero-image-bottom-right {
+    bottom: 2rem;
+  }
+
+  .hero-image-top-left,
+  .hero-image-bottom-left {
+    left: 1.5rem;
+  }
+
+  .hero-image-top-right,
+  .hero-image-bottom-right {
+    right: 1.5rem;
+  }
+
+  .hero-badge {
+    top: 2rem;
+    right: 2rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+}
+
+/* ✅ Light mode orange company name */
+[data-theme="light"] .hero-link {
+  color: #ff6f00 !important;
+}
+
+[data-theme="light"] .hero-link:hover {
+  color: #ff6f00 !important;
+}
+[data-theme="light"] .hero-title {
+  color: #ff6f00;
+}
+

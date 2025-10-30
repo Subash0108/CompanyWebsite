@@ -1,0 +1,129 @@
+.development-approach {
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.dev-arrow-icon {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  transform: translateY(2px);
+}
+
+.approach-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left Side - Flowchart */
+.flowchart {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 80px; /* spacing between steps */
+}
+
+.flow-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flow-step p {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Animated connecting line */
+.animated-line {
+  width: 4px;
+  height: 0;
+  background: linear-gradient(to bottom, #ffb347, var(--accent-color));
+  border-radius: 5px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: height 1s ease-out, opacity 0.1s ease;
+  opacity: 0;
+}
+
+/* Active state - line grows */
+.animated-line.active {
+  height: 80px; /* same as gap */
+  opacity: 1;
+}
+
+/* Right Side - Tech Icons */
+.tech-icons {
+  flex: 1.3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-8px);
+}
+
+.icon {
+  font-size: 42px;
+  color: var(--accent-color);
+  margin-bottom: 8px;
+}
+
+.tech-item span {
+  font-size: 15px;
+  color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .approach-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tech-icons {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    width: 100%;
+  }
+
+  .flowchart {
+    margin-bottom: 40px;
+  }
+
+  .arrow-icon {
+    font-size: 1.8rem;
+  }
+}

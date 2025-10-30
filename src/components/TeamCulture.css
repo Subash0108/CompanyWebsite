@@ -1,0 +1,450 @@
+.team-culture {
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 8rem 2rem 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.team-culture-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* Left Column */
+.team-culture-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Card Styles */
+.team-culture-left-card.company-snapshot-style {
+  background: rgba(255, 111, 0, 0.05);
+  border: 2px solid var(--accent-color);
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 15px rgba(255, 111, 0, 0.16);
+}
+
+.company-snapshot-style h3,
+.company-snapshot-heading {
+  color: var(--accent-color);
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.arrow-icon {
+  color: var(--accent-color);
+  font-size: 1.4rem;
+}
+
+.company-snapshot-style table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.company-snapshot-style td {
+  padding: 0.6rem 0;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+}
+
+.company-snapshot-style td:first-child {
+  font-weight: 600;
+  color: var(--accent-color);
+  width: 40%;
+}
+
+/* Expertise Table */
+.company-snapshot-table {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.company-snapshot-table .row {
+  display: grid;
+  grid-template-columns: 180px 250px;
+  gap: 0.5rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 111, 0, 0.15);
+}
+
+.company-snapshot-table .row:last-child {
+  border-bottom: none;
+}
+
+.company-snapshot-table .label {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.company-snapshot-table .value {
+  text-align: right;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* Right Section */
+.team-culture-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.team-culture-text h3 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin-bottom: 0.8rem;
+}
+
+.team-culture-text p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.highlight {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* Tech Icons Grid */
+.tech-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-top: -2rem;
+}
+
+.tech-item {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.tech-item:hover {
+  transform: translateY(-6px);
+}
+
+.tech-item:hover .tech-icon {
+  color: var(--accent-color);
+}
+
+.tech-item:hover span {
+  color: var(--accent-color);
+}
+
+/* Icon size and color */
+.tech-icon {
+  font-size: 2rem;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* Label under icon */
+.tech-item span {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  margin-top: 0.4rem;
+  font-weight: 600;
+}
+
+/* Bottom Orange Banner */
+.service-bottom-banner {
+  margin-top: 5rem;
+  background: linear-gradient(90deg, var(--accent-color), #ff9800);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 1.2rem 2rem;
+  color: #000;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: center;
+  flex-wrap: wrap;
+  transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+.banner-arrow {
+  background: #000;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  border-radius: 50%;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text {
+  margin: 0;
+}
+
+.banner-link {
+  color: #000;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-left: 6px;
+  transition: color 0.3s ease;
+}
+
+.banner-link:hover {
+  color: #0c0d0d;
+}
+
+.service-bottom-banner {
+  width: 90%;
+  max-width: 1000px;
+  margin-top: 4rem;
+}
+
+/* 🌞 Light Mode Override */
+body.light .service-bottom-banner {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+body.light .service-bottom-banner .banner-link {
+  color: #fff !important;
+}
+
+body.light .service-bottom-banner .banner-arrow {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* ----------- Responsive (unchanged) ----------- */
+
+@media (max-width: 480px) {
+  .team-culture {
+    padding: 5rem 1rem 4rem 1rem;
+  }
+
+  .team-culture-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .team-culture-text h3 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .team-culture-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .company-snapshot-style {
+    padding: 1.5rem;
+  }
+
+  .company-snapshot-table .row {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .tech-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .tech-item {
+    width: 70px;
+    height: 70px;
+  }
+
+  .tech-icon {
+    font-size: 1.4rem;
+  }
+
+  .tech-item span {
+    font-size: 0.7rem;
+  }
+
+  .service-bottom-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    gap: 10px;
+    font-size: 0.95rem;
+  }
+}
+
+
+
+/* ----------- Responsive (unchanged) ----------- */
+
+@media (max-width: 480px) {
+  .team-culture {
+    padding: 5rem 1rem 4rem 1rem;
+  }
+
+  .team-culture-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .team-culture-text h3 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .team-culture-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .company-snapshot-style {
+    padding: 1.5rem;
+  }
+
+  .company-snapshot-table .row {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .tech-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .tech-item {
+    width: 70px;
+    height: 70px;
+  }
+
+  .tech-icon {
+    font-size: 1.4rem;
+  }
+
+  .tech-item span {
+    font-size: 0.7rem;
+  }
+
+  .service-bottom-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    gap: 10px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 640px) {
+  .team-culture-container {
+    grid-template-columns: 1fr;
+  }
+
+  .team-culture-text h3 {
+    font-size: 1.6rem;
+  }
+
+  .tech-icons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .tech-item {
+    width: 85px;
+    height: 85px;
+  }
+
+  .service-bottom-banner {
+    width: 95%;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .team-culture-container {
+    grid-template-columns: 1fr;
+  }
+
+  .team-culture-text h3 {
+    text-align: center;
+  }
+
+  .tech-icons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .service-bottom-banner {
+    width: 90%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .team-culture-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .team-culture-text h3 {
+    font-size: 1.6rem;
+  }
+
+  .tech-icons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .team-culture-container {
+    gap: 3rem;
+  }
+
+  .team-culture-text p {
+    font-size: 1rem;
+  }
+
+  .tech-icons {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1441px) {
+  .team-culture-container {
+    max-width: 1400px;
+  }
+
+  .team-culture-text h3 {
+    font-size: 2rem;
+  }
+
+  .team-culture-text p {
+    font-size: 1.2rem;
+  }
+
+  .tech-item {
+    width: 110px;
+    height: 110px;
+  }
+
+  .tech-icon {
+    font-size: 2.2rem;
+  }
+}

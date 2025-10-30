@@ -1,0 +1,143 @@
+.leadership {
+  min-height: 100vh;
+  background: var(--bg-color);
+  padding: 6rem 2rem;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.leadership-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leadership-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-label {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  margin: 1rem 0;
+}
+
+.arrow-icon {
+  color: var(--accent-color);
+  font-size: 1.4rem;
+  transform: translateY(2px);
+}
+
+.section-description {
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 1rem auto;
+  line-height: 1.8;
+}
+
+/* Two image boxes side by side */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.leadership-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #ff9800;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+.leadership-card:hover {
+  transform: translateY(-7px) scale(1.04);
+  box-shadow: 0 8px 30px rgba(255, 111, 0, 0.25);
+}
+
+.leadership-image-wrapper {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.leadership-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.leadership-card:hover .leadership-img {
+  filter: brightness(0.7) contrast(1.05);
+}
+
+.leadership-img-hover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 111, 0, 0.65), rgba(255, 152, 0, 0.6));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.leadership-card:hover .leadership-img-hover {
+  opacity: 0.4;
+}
+
+/* 👇 Text below image */
+.leadership-info {
+  padding: 1.2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leadership-info h3 {
+  color: var(--accent-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.leadership-info h4 {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.leadership-info p {
+  color: var(--text-color);
+  opacity: 0.8;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-image-wrapper {
+    height: 220px;
+  }
+}
