@@ -50,7 +50,7 @@ export default function Services() {
       <div className="services-container">
         {/* Section Header */}
         <div className="services-header">
-          <h2 className="section-title">
+          <h2 className="header-title">
             <span className="arrow-icon">▶</span> What We Do Best
 
           </h2>

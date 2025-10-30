@@ -2,7 +2,7 @@
 .contact {
   min-height: 100vh;
   background: #0b0b0b;
-  padding: 6rem 2rem;
+  padding: 3rem 0rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,7 +125,32 @@ body[data-theme="light"] .icon-wrapper {
   background: rgba(255, 111, 0, 0.15);
 }
 
-/* 📱 Responsive */
+/* 📱 Responsive Design */
+
+/* 🖥️ Large screens (above 1200px) */
+@media (min-width: 1200px) {
+  .contact-container {
+    padding: 0 4rem;
+  }
+}
+
+/* 💻 Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .contact {
+    padding: 5rem 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-box {
+    min-width: 260px;
+    padding: 1.8rem;
+  }
+}
+
+/* 📱 Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .contact-boxes {
     flex-direction: column;
@@ -134,6 +159,51 @@ body[data-theme="light"] .icon-wrapper {
 
   .contact-box {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+}
+
+/* 📲 Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .contact {
+    padding: 4rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+  }
+
+  .contact-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .contact-icon {
+    font-size: 1.6rem;
+  }
+
+  .contact-box h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-box p {
+    font-size: 0.9rem;
   }
 }

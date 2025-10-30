@@ -2,62 +2,59 @@ import React from "react";
 import "./Leadership.css";
 
 export default function Leadership() {
-  const leaders = [
-    {
-      img: "https://via.placeholder.com/400x300",
-      name: "John Doe",
-      role: "Chief Executive Officer",
-      description:
-        "Leading with innovation and a strong vision for company growth."
-    },
-    {
-      img: "https://via.placeholder.com/400x300",
-      name: "Jane Smith",
-      role: "Head of Operations",
-      description:
-        "Ensuring every process aligns with efficiency and excellence."
-    }
-  ];
-
   return (
     <section id="leadership" className="leadership">
       <div className="leadership-container">
+        {/* Header */}
         <div className="leadership-header">
           <h2 className="section-title">
             <span className="arrow-icon">▶</span> Leadership That Inspires Innovation
-
           </h2>
           <p className="section-description">
-            Each one showcases my approach and dedication to detail, creativity
+            Our leaders drive excellence, inspire creativity, and shape the vision of our company.
           </p>
         </div>
 
-        <div className="leadership-grid">
-          {leaders.map((leader, idx) => (
-            <div key={idx} className="leadership-card">
-              <div className="leadership-image-wrapper">
-                <img
-                  src={leader.img}
-                  alt={leader.name}
-                  className="leadership-img"
-                />
-                <div className="leadership-img-hover"></div>
-              </div>
+        {/* Main Layout */}
+        <div className="leadership-layout">
+          {/* Left Image */}
+          <div className="leader-photo">
+            <img src="https://via.placeholder.com/400x300" alt="Leader Left" />
+          </div>
 
-              {/* 👇 Added matter below photo */}
-              <div className="leadership-info" style={{ padding: "1rem", textAlign: "center" }}>
-                <h3 style={{ color: "#ff6f00", fontSize: "1.4rem", marginBottom: "0.5rem" }}>
-                  {leader.name}
-                </h3>
-                <h4 style={{ color: "#fff", fontSize: "1.1rem", marginBottom: "0.5rem" }}>
-                  {leader.role}
-                </h4>
-                <p style={{ color: "#aaa", fontSize: "1rem", lineHeight: "1.6" }}>
-                  {leader.description}
-                </p>
-              </div>
+          {/* Middle Section */}
+          <div className="leader-middle">
+            {/* Founder Card */}
+            <div className="vision-mission-card founder-card">
+              <span className="arrow-left">▶</span>
+              <h3>Pavan Sai Viswanadhuni</h3>
+              <p className="leader-role">Founder, CEO & Managing Director</p>
+              <p>
+                At Nuhvin, I believe great ideas deserve powerful execution. My goal is to help
+                businesses grow through smart technology, creativity, and teamwork. We focus on
+                building digital solutions that make a real difference — practical, innovative, and
+                built for long-term success.
+              </p>
             </div>
-          ))}
+
+            {/* Co-Founder Card */}
+            <div className="vision-mission-card cofounder-card">
+              <span className="arrow-right">◀</span>
+              <h3>V. D. Prasad</h3>
+              <p className="leader-role">Co-Founder & Director</p>
+              <p>
+                I focus on building strong business operations and financial strategies that ensure
+                every project delivers measurable value. My goal is to keep our clients’ trust by
+                maintaining transparency, efficiency, and long-term partnerships that help businesses
+                grow with confidence.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Image */}
+          <div className="leader-photo">
+            <img src="https://via.placeholder.com/400x300" alt="Leader Right" />
+          </div>
         </div>
       </div>
     </section>

@@ -116,15 +116,60 @@ input:checked + .slider::before {
 
 /* 🌞 LIGHT MODE FIXES */
 body[data-theme="light"] .header .social-icons a {
-  color: #000; /* visible dark icons */
+  color: #000;
 }
 
 body[data-theme="light"] .header .social-icons a:hover {
   background: #ff6f00;
-  color: #fff; /* invert on hover */
+  color: #fff;
 }
 
-/* 📱 Responsive */
+/* ===============================
+   RESPONSIVE DESIGN
+=============================== */
+
+/* Large Laptops / 1200px */
+@media (max-width: 1200px) {
+  .header-logo {
+    width: 120px;
+    left: 30px;
+  }
+
+  .header {
+    right: 1.5rem;
+  }
+
+  .header .social-icons a {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Tablets Landscape / 992px */
+@media (max-width: 992px) {
+  .header {
+    top: 0.8rem;
+    right: 1rem;
+  }
+
+  .header-logo {
+    width: 110px;
+    left: 25px;
+  }
+
+  .header .social-icons {
+    gap: 0.6rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .header .social-icons a {
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablets Portrait / 768px */
 @media (max-width: 768px) {
   .header {
     top: 0.5rem;
@@ -141,23 +186,120 @@ body[data-theme="light"] .header .social-icons a:hover {
     height: 32px;
     font-size: 1rem;
   }
-}
 
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 640px) {
   .header-logo {
     width: 100px;
     top: 15px;
     left: 20px;
+  }
+}
+
+/* ✅ Mobile Phones / 480px — only changes here */
+@media (max-width: 480px) {
+  .header {
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header-logo {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: auto;
+  }
+
+  .header .social-icons {
+    position: relative;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 9999px;
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  /* Menu toggle (3 dots) */
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.4rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle:hover {
+    color: var(--accent-color, #ff6f00);
+  }
+
+  /* Hide extra icons by default */
+  .more-icons {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 6px;
+  }
+
+  /* Show when active */
+  .social-icons.active .more-icons {
+    display: flex;
+    animation: fadeDown 0.4s ease-in-out;
+  }
+
+  /* Icons sizing */
+  .header .social-icons a {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .theme-switch {
+    margin-left: 8px;
+    width: 38px;
+    height: 20px;
+  }
+}
+
+/* Extra Small Phones / 360px */
+@media (max-width: 360px) {
+  .header-logo {
+    width: 75px;
+  }
+
+  .header .social-icons a {
+    width: 26px;
+    height: 26px;
+    font-size: 0.9rem;
+  }
+
+  .menu-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

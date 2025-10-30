@@ -1,13 +1,34 @@
+/* ======================== */
+/* Leadership Base Styles   */
+/* ======================== */
 .leadership {
   min-height: 100vh;
-  background: var(--bg-color);
-  padding: 6rem 2rem;
-  transition: background-color var(--transition-speed), color var(--transition-speed);
+  padding: 3rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
+/* Default (Dark mode) */
+body[data-theme="dark"] .leadership {
+  background: #0b0b0b;
+  color: #ddd;
+}
+
+/* Light Mode */
+body[data-theme="light"] .leadership {
+  background: #f9f9f9;
+  color: #222;
+}
+
+/* ======================== */
+/* Header Section           */
+/* ======================== */
 .leadership-container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .leadership-header {
@@ -15,129 +36,169 @@
   margin-bottom: 4rem;
 }
 
-.section-label {
-  color: var(--accent-color);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--accent-color);
+  color: #ff6f00;
   margin: 1rem 0;
 }
 
-.arrow-icon {
-  color: var(--accent-color);
-  font-size: 1.4rem;
-  transform: translateY(2px);
-}
-
 .section-description {
-  color: var(--text-color);
-  opacity: 0.7;
+  opacity: 0.8;
   font-size: 1.1rem;
   max-width: 600px;
   margin: 1rem auto;
   line-height: 1.8;
 }
 
-/* Two image boxes side by side */
-.leadership-grid {
+/* ======================== */
+/* Layout Grid              */
+/* ======================== */
+.leadership-layout {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3rem;
-}
-
-.leadership-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid #ff9800;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  cursor: pointer;
-}
-
-.leadership-card:hover {
-  transform: translateY(-7px) scale(1.04);
-  box-shadow: 0 8px 30px rgba(255, 111, 0, 0.25);
-}
-
-.leadership-image-wrapper {
+  grid-template-columns: 1fr 1.3fr 1fr;
+  align-items: center;
+  gap: 3rem;
   position: relative;
-  height: 300px;
-  overflow: hidden;
 }
 
-.leadership-img {
+/* ======================== */
+/* Photos                   */
+/* ======================== */
+.leader-photo {
+  border: 2px solid #ff6f00;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 380px;
+  width: 100%;
+}
+
+.leader-photo:first-child {
+  transform: translateY(-150px); /* move up by 150px */
+}
+
+/* ✅ Move the right-side photo slightly to the right */
+.leader-photo:last-child {
+  transform: translateY(100px); /* adjust value as needed (20px–60px works well) */
+}
+
+.leader-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  transition: filter 0.3s ease;
 }
 
-.leadership-card:hover .leadership-img {
-  filter: brightness(0.7) contrast(1.05);
+/* ======================== */
+/* Info Cards (Middle Divs) */
+/* ======================== */
+.leader-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  transform: translateY(-27px); /* Move the middle div slightly upward */
 }
 
-.leadership-img-hover {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 111, 0, 0.65), rgba(255, 152, 0, 0.6));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+.vision-mission-card {
+  position: relative;
+  border: 1.5px solid #ff6f00;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  transition: all 0.3s ease;
 }
 
-.leadership-card:hover .leadership-img-hover {
-  opacity: 0.4;
+/* Dark mode card */
+body[data-theme="dark"] .vision-mission-card {
+  background: rgba(13, 13, 13, 0.55);
+  box-shadow: 0 0 20px rgba(255, 111, 0, 0.15);
+  color: #ddd;
 }
 
-/* 👇 Text below image */
-.leadership-info {
-  padding: 1.2rem;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.04);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* Light mode card */
+body[data-theme="light"] .vision-mission-card {
+  background: #fff;
+  color: #333;
+  box-shadow: 0 0 20px rgba(255, 111, 0, 0.1);
 }
 
-.leadership-info h3 {
-  color: var(--accent-color);
-  font-size: 1.4rem;
+.vision-mission-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(255, 111, 0, 0.35);
+}
+
+.vision-mission-card h3 {
+  color: #ff6f00;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.leader-role {
   font-weight: 600;
-  margin-bottom: 0.4rem;
+  color: #ff6f00;
+  margin-bottom: 1rem;
 }
 
-.leadership-info h4 {
-  color: var(--text-color);
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
+/* ======================== */
+/* Arrow Styles             */
+/* ======================== */
+.arrow-left,
+.arrow-right {
+  position: absolute;
+  top: 1.1rem;
+  font-size: 1.7rem;
+  color: #ff6f00;
+  font-weight: bold;
+  background: transparent;
+  z-index: 3;
 }
 
-.leadership-info p {
-  color: var(--text-color);
-  opacity: 0.8;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0;
+.arrow-left {
+  left: -2.4rem;
 }
 
-/* 📱 Responsive */
-@media (max-width: 768px) {
-  .leadership-grid {
+.arrow-right {
+  right: -2.4rem;
+}
+
+/* ======================== */
+/* Responsive Design        */
+/* ======================== */
+@media (max-width: 992px) {
+  .leadership-layout {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  .leadership-image-wrapper {
-    height: 220px;
+  .leader-photo {
+    height: 300px;
+    transform: none;
+  }
+
+  .leader-middle {
+    transform: none; /* reset middle div position for mobile */
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .vision-mission-card {
+    padding: 1.5rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .leader-photo {
+    height: 250px;
+  }
+
+  .arrow-left,
+  .arrow-right {
+    display: none;
   }
 }

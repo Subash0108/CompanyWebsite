@@ -1,9 +1,11 @@
 /* 🌙 Dark Mode (default) */
 .thanks-card {
-  background: #000;
+  background: #0b0b0b;
+  min-height: 50vh;
   color: #fff;
-  padding: 2rem 0rem;
+  padding: 3rem 0rem;
   text-align: center;
+  justify-content: center;
 }
 
 .thanks-title {
@@ -64,6 +66,23 @@ body[data-theme="light"] .thanks-link:hover {
 }
 
 /* 📱 Responsive Design */
+
+/* 💻 Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .thanks-card {
+    padding: 5rem 2rem;
+  }
+
+  .thanks-title {
+    font-size: 2.6rem;
+  }
+
+  .thanks-message {
+    font-size: 1.1rem;
+  }
+}
+
+/* 📱 Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .thanks-title {
     font-size: 2.2rem;
@@ -74,7 +93,46 @@ body[data-theme="light"] .thanks-link:hover {
     padding: 0 1rem;
   }
 
-  .arrow-icon {
-    font-size: 2rem;
+  .row-icon {
+    font-size: 1.8rem;
+  }
+}
+
+/* 📲 Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .thanks-card {
+    padding: 4rem 1rem;
+  }
+
+  .thanks-title {
+    font-size: 1.8rem;
+  }
+
+  .thanks-message {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .row-icon {
+    font-size: 1.5rem;
+  }
+
+  .thanks-link {
+    font-size: 1rem;
+  }
+}
+
+/* 🖥️ Large screens (above 1200px) */
+@media (min-width: 1200px) {
+  .thanks-card {
+    padding: 7rem 4rem;
+  }
+
+  .thanks-title {
+    font-size: 3.2rem;
+  }
+
+  .thanks-message {
+    font-size: 1.3rem;
   }
 }

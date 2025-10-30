@@ -1,3 +1,6 @@
+/* =============================== */
+/* 🌙 HERO SECTION BASE CSS (UPDATED) */
+/* =============================== */
 * {
   margin: 0;
   padding: 0;
@@ -23,13 +26,13 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-color: var(--bg-color); /* ✅ THEME VARIABLE */
+  background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
-  color: var(--text-color); /* ✅ THEME VARIABLE */
+  padding: 3rem 0rem;
+  color: var(--text-color);
   overflow: hidden;
   margin: 0;
 }
@@ -42,24 +45,24 @@ body {
   height: 100%;
   background: linear-gradient(
     to bottom right,
-    var(--gradient-start, #000000),
+    var(--gradient-start, #0b0b0b),
     var(--gradient-end, rgba(0, 0, 0, 0.8))
   );
   pointer-events: none;
   z-index: 0;
 }
 
-/* ✅ Theme color variables for dark/light */
+/* ✅ Theme Variables */
 :root {
-  --gradient-start: #f7f7f7;
-  --gradient-end: #eaeaea;
-  --circle-border-color: rgba(0, 0, 0, 0.2); /* visible on light mode */
+  --gradient-start: #ffffff;
+  --gradient-end: #ffffff;
+  --circle-border-color: rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="dark"] {
-  --gradient-start: #000000;
+  --gradient-start: #0b0b0b;
   --gradient-end: rgba(0, 0, 0, 0.8);
-  --circle-border-color: rgba(255, 255, 255, 0.3); /* visible on dark mode */
+  --circle-border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Hero Images */
@@ -69,7 +72,7 @@ body {
   height: 12rem;
   border-radius: 1rem;
   overflow: hidden;
-  border: 3px solid var(--accent-color); /* ✅ THEME VARIABLE */
+  border: 3px solid var(--accent-color);
   z-index: 5;
 }
 
@@ -100,13 +103,6 @@ body {
   right: 3rem;
 }
 
-.hero-background::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
 /* Main Content */
 .hero-content {
   position: relative;
@@ -133,7 +129,6 @@ body {
 .hero-link {
   color: var(--text-color);
   text-decoration: none;
-  font-weight: bold;
   font-weight: 900;
 }
 
@@ -191,7 +186,7 @@ body {
   transform: translateX(-50%);
   width: 200px;
   height: 200px;
-  border: 1px solid var(--circle-border-color); /* ✅ THEME BASED BORDER */
+  border: 1px solid var(--circle-border-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -263,36 +258,14 @@ text {
   z-index: 2;
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-}
+/* ===============================
+   RESPONSIVE DESIGN
+=============================== */
 
-/* Responsive */
+/* ✅ Hide Circle in Mobile View */
 @media (max-width: 640px) {
   .hero-circle {
-    width: 150px;
-    height: 150px;
-    bottom: 1rem;
-  }
-
-  .circle-center {
-    width: 20px;
-    height: 20px;
-  }
-
-  .circle-svg {
-    width: 150px;
-    height: 150px;
-  }
-
-  text {
-    font-size: 10px;
-    letter-spacing: 4px;
+    display: none !important;
   }
 }
 
@@ -397,7 +370,7 @@ text {
 [data-theme="light"] .hero-link:hover {
   color: #ff6f00 !important;
 }
+
 [data-theme="light"] .hero-title {
   color: #ff6f00;
 }
-

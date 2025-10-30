@@ -1,7 +1,8 @@
+/* 🌙 Base Section */
 .team-culture {
   background: var(--bg-color);
   color: var(--text-color);
-  padding: 8rem 2rem 6rem 2rem;
+  padding: 3rem 2rem 6rem 0rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -184,6 +185,9 @@
   text-align: center;
   flex-wrap: wrap;
   transition: background var(--transition-speed), color var(--transition-speed);
+  width: 90%;
+  max-width: 1000px;
+  margin-top: 4rem;
 }
 
 .banner-arrow {
@@ -213,12 +217,6 @@
   color: #0c0d0d;
 }
 
-.service-bottom-banner {
-  width: 90%;
-  max-width: 1000px;
-  margin-top: 4rem;
-}
-
 /* 🌞 Light Mode Override */
 body.light .service-bottom-banner {
   background: #000 !important;
@@ -234,16 +232,31 @@ body.light .service-bottom-banner .banner-arrow {
   color: #000 !important;
 }
 
-/* ----------- Responsive (unchanged) ----------- */
+/* ===========================
+   📱 Responsive Design
+=========================== */
 
+/* --- Mobile First --- */
 @media (max-width: 480px) {
   .team-culture {
     padding: 5rem 1rem 4rem 1rem;
   }
 
   .team-culture-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  /* ✅ Show team culture (text) first, then table, then tech list */
+  .team-culture-right {
+    order: 1;
+  }
+  .team-culture-left {
+    order: 2;
+  }
+  .tech-icons {
+    order: 3;
   }
 
   .team-culture-text h3 {
@@ -293,84 +306,29 @@ body.light .service-bottom-banner .banner-arrow {
   }
 }
 
-
-
-/* ----------- Responsive (unchanged) ----------- */
-
-@media (max-width: 480px) {
-  .team-culture {
-    padding: 5rem 1rem 4rem 1rem;
-  }
-
+/* --- Small Tablets --- */
+@media (min-width: 481px) and (max-width: 768px) {
   .team-culture-container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
   }
 
-  .team-culture-text h3 {
-    font-size: 1.4rem;
-    text-align: center;
+  .team-culture-right {
+    order: 1;
   }
-
-  .team-culture-text p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: center;
-  }
-
-  .company-snapshot-style {
-    padding: 1.5rem;
-  }
-
-  .company-snapshot-table .row {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .tech-icons {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
-  }
-
-  .tech-item {
-    width: 70px;
-    height: 70px;
-  }
-
-  .tech-icon {
-    font-size: 1.4rem;
-  }
-
-  .tech-item span {
-    font-size: 0.7rem;
-  }
-
-  .service-bottom-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem;
-    gap: 10px;
-    font-size: 0.95rem;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 640px) {
-  .team-culture-container {
-    grid-template-columns: 1fr;
+  .team-culture-left {
+    order: 2;
   }
 
   .team-culture-text h3 {
     font-size: 1.6rem;
+    text-align: center;
   }
 
   .tech-icons {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-  }
-
-  .tech-item {
-    width: 85px;
-    height: 85px;
   }
 
   .service-bottom-banner {
@@ -379,24 +337,7 @@ body.light .service-bottom-banner .banner-arrow {
   }
 }
 
-@media (min-width: 641px) and (max-width: 768px) {
-  .team-culture-container {
-    grid-template-columns: 1fr;
-  }
-
-  .team-culture-text h3 {
-    text-align: center;
-  }
-
-  .tech-icons {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .service-bottom-banner {
-    width: 90%;
-  }
-}
-
+/* --- Tablets & Small Laptops --- */
 @media (min-width: 769px) and (max-width: 1024px) {
   .team-culture-container {
     grid-template-columns: 1fr 1fr;
@@ -412,6 +353,7 @@ body.light .service-bottom-banner .banner-arrow {
   }
 }
 
+/* --- Laptop --- */
 @media (min-width: 1025px) and (max-width: 1440px) {
   .team-culture-container {
     gap: 3rem;
@@ -426,6 +368,7 @@ body.light .service-bottom-banner .banner-arrow {
   }
 }
 
+/* --- Large Screens --- */
 @media (min-width: 1441px) {
   .team-culture-container {
     max-width: 1400px;

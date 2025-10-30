@@ -1,11 +1,11 @@
 /* 🌙 Dark Mode (default) */
 .why-partner {
   position: relative;
-  background: url("/e3ae96f4-a970-4deb-b7c4-571e7a4ec2df.png") no-repeat center
-    center/cover;
+  background: url("/e3ae96f4-a970-4deb-b7c4-571e7a4ec2df.png") no-repeat center center/cover;
   min-height: 80vh;
-  padding: 5rem 2rem;
+  padding: 3rem 0rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -33,7 +33,7 @@
 
 .why-partner h3 {
   color: #ff6f00;
-  font-size: 2.0rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 0.8rem;
 }
@@ -128,32 +128,95 @@ body[data-theme="light"] .why-partner-number {
   color: #888;
 }
 
-/* Responsive */
+/* ===========================
+   📱 Responsive Design
+=========================== */
+
+/* Laptop / Large Tablet */
+@media (max-width: 1200px) {
+  .why-partner {
+    padding: 4rem 2rem;
+  }
+
+  .why-partner-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+  }
+
+  .why-partner-title {
+    font-size: 2.4rem;
+  }
+
+  .why-partner-description {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablet */
 @media (max-width: 1000px) {
   .why-partner-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+
+  .why-partner-title {
+    font-size: 2.2rem;
+  }
+
+  .why-partner-description {
+    font-size: 1.1rem;
+  }
+
+  .why-partner-card {
+    padding: 2rem 1rem;
+  }
 }
 
+/* Mobile */
 @media (max-width: 650px) {
+  .why-partner {
+    padding: 3rem 1rem;
+  }
+
   .why-partner-grid {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 
   .why-partner-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .why-partner-description {
     font-size: 1rem;
+    line-height: 1.6;
   }
 
   .why-partner-card {
     text-align: center;
+    padding: 1.5rem;
   }
 
   .why-partner-number {
-    font-size: 3rem;
+    font-size: 2.8rem;
+  }
+
+  .why-partner-card-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 400px) {
+  .why-partner-title {
+    font-size: 1.5rem;
+  }
+
+  .why-partner-description {
+    font-size: 0.95rem;
+  }
+
+  .why-partner-card {
+    padding: 1rem;
   }
 }

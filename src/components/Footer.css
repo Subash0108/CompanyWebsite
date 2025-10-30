@@ -22,14 +22,17 @@
   margin: 0;
 }
 
+/* ✅ Moved slightly left from the corner */
 .footer-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem; /* spacing between links */
+  margin-right: 0rem; /* less right margin (moved left) */
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .footer-link {
   color: gray;
-  margin-right: -15px;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease, text-shadow 0.3s ease;
@@ -61,13 +64,76 @@ body[data-theme="light"] .footer-link:hover {
 }
 
 /* 📱 Responsive Design */
+
+/* 💻 Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .footer-container {
+    padding: 0 1rem;
+  }
+
+  .footer-links {
+    margin-right: 2rem;
+    gap: 1.5rem;
+  }
+
+  .footer-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* 📱 Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
+    align-items: center;
     gap: 0.8rem;
+    text-align: center;
   }
 
   .footer-links {
     gap: 1rem;
+    margin-right: 0; /* prevent overflow on smaller screens */
+    justify-content: center;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📲 Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+  }
+
+  .footer-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* 🖥️ Large Screens (min-width: 1400px) */
+@media (min-width: 1400px) {
+  .footer-container {
+    max-width: 1400px;
+    padding: 0 3rem;
+  }
+
+  .footer-text {
+    font-size: 1.1rem;
+  }
+
+  .footer-links {
+    gap: 2.5rem;
+    margin-right: -5rem;
   }
 }

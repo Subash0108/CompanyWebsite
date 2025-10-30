@@ -1,7 +1,7 @@
 .about {
   min-height: 100vh;
   background: var(--bg-color);
-  padding: 6rem 2rem;
+  padding: 3rem 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -206,26 +206,72 @@
   line-height: 1.8;
 }
 
-/* === RESPONSIVE DESIGN === */
-@media (max-width: 1024px) {
+/* =======================
+   THEME VARIABLES
+======================= */
+
+:root {
+  --bg-color: #f7f7f7;
+  --text-color: #000;
+  --subtext-color: #555;
+  --accent-color: #ff9800;
+}
+
+[data-theme="dark"] {
+  --bg-color: #000;
+  --text-color: #fff;
+  --subtext-color: #aaa;
+  --accent-color: #ff9800;
+}
+
+/* =======================
+   RESPONSIVE DESIGN 
+======================= */
+
+/* Laptop (1200px and below) */
+@media (max-width: 1200px) {
+  .about-container {
+    gap: 3rem;
+  }
+
+  .snapshot-row {
+    grid-template-columns: 160px 1fr;
+  }
+
+  .snapshot-title {
+    font-size: 1.9rem;
+  }
+
+  .info-box {
+    padding: 2rem;
+  }
+}
+
+/* Tablet Landscape (992px and below) */
+@media (max-width: 992px) {
   .about-container {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
-  .snapshot-row {
-    grid-template-columns: 150px 1fr;
+  .company-intro-text {
+    max-width: 90%;
   }
 
   .snapshot-title {
     font-size: 1.8rem;
   }
 
-  .company-intro-text p {
-    font-size: 1.05rem;
+  .snapshot-row {
+    grid-template-columns: 150px 1fr;
+  }
+
+  .about-heading-with-arrow {
+    font-size: 1.8rem;
   }
 }
 
+/* Tablet Portrait (768px and below) */
 @media (max-width: 768px) {
   .about {
     padding: 4rem 1.5rem;
@@ -278,6 +324,7 @@
   }
 }
 
+/* Mobile (480px and below) */
 @media (max-width: 480px) {
   .about {
     padding: 3rem 1rem;
@@ -327,5 +374,33 @@
 
   .vision-mission-container {
     gap: 1.5rem;
+  }
+}
+
+/* Small Phones (360px and below) */
+@media (max-width: 360px) {
+  .snapshot-title {
+    font-size: 1.3rem;
+  }
+
+  .about-heading-with-arrow {
+    font-size: 1.2rem;
+  }
+
+  .info-box {
+    padding: 1.2rem;
+  }
+
+  .info-box h3 {
+    font-size: 1.1rem;
+  }
+
+  .company-intro-text p {
+    font-size: 0.9rem;
+  }
+
+  .snapshot-label,
+  .snapshot-value {
+    font-size: 0.85rem;
   }
 }
