@@ -1,5 +1,5 @@
 import React from "react";
-import "./HeroSection.css";
+import "./Herosection.css";
 
 export default function HeroSection() {
   // Function to scroll to next section
