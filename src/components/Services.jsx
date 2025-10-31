@@ -54,7 +54,7 @@ export default function Services() {
             <span className="arrow-icon">▶</span> What We Do Best
 
           </h2>
-          <p className="section-description">
+          <p className="description">
             We empowers businesses with intelligent, scalable digital solutions that simplify operations, enhance user experiences, and drive measurable growth across from healthcare to e-commerce, and logistics.
           </p>
         </div>

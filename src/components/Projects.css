@@ -23,6 +23,10 @@
   transform: translateY(2px);
 }
 
+.projects-title {
+  margin-left: -25px;
+}
+
 .projects-title,
 .projects-header h3 {
   color: #ff6f00;
@@ -37,7 +41,9 @@
   line-height: 1.8;
   margin: 0 auto;
   text-align: center;
-  max-width: 800px;
+  white-space: nowrap; /* 👈 Keeps entire text in one line */
+  display: flex;
+  justify-content: center;
 }
 
 /* 🔸 Grid: 3 on top, 3 on bottom */
@@ -81,14 +87,15 @@
 
 /* 🔹 Logo inside card (increased size) */
 .projects-logo {
-  width: 110px;
-  height: 110px;
-  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 130px;
+  margin-bottom: 0rem;
 }
 
 .projects-logo img {
-  width: 100%;
-  height: 100%;
   object-fit: contain;
   border-radius: 12px;
 }
@@ -113,6 +120,10 @@ body[data-theme="light"] .projects {
   color: #000;
 }
 
+body[data-theme="light"] .projects-description {
+  color: #000;
+}
+
 body[data-theme="light"] .projects-card {
   background: #f9f9f9;
   border: 1.5px solid rgba(255, 111, 0, 0.25);
@@ -128,54 +139,161 @@ body[data-theme="light"] .projects-card-desc {
 }
 
 /* 📱 Responsive Design */
+
+/* Tablets (≤1024px) */
 @media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
   }
 
   .projects-logo {
     width: 100px;
     height: 100px;
   }
+
+  .projects-description {
+    white-space: normal;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
 }
 
+/* Small Tablets / Large Phones (≤768px) */
 @media (max-width: 768px) {
+  .projects {
+    padding: 2.5rem 1rem;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.3rem;
+    width: 100%;
+    margin-top: 0.5rem;
   }
 
   .projects-card {
     text-align: center;
     align-items: center;
+    padding: 1.5rem 1rem;
+    margin: 0 auto;
   }
 
   .projects-logo {
-    margin: 0 auto 1.2rem auto;
-    width: 95px;
-    height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem auto;
+    width: 90px;
+    height: 90px;
   }
 
   .projects-card-desc {
     text-align: center;
   }
+
+  .projects-header {
+    margin-bottom: 2rem;
+  }
+
+  .projects-description {
+    white-space: normal;
+    font-size: 1rem;
+    margin: 0 auto 1rem auto;
+    padding: 0 10px;
+  }
 }
 
+/* ✅ Mobile Devices (≤480px) - Final Optimized (No gaps) */
 @media (max-width: 480px) {
   .projects {
-    padding: 3.5rem 1rem;
+    padding: 2rem 0.8rem;
+    min-height: auto;
   }
 
-  .projects-card-title {
-    font-size: 1.1rem;
+  .projects-title,
+  .projects-header h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
   }
 
-  .projects-card-desc {
+  .projects-description {
     font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: normal;
+    margin-bottom: 1.5rem;
+    padding: 0 5px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .projects-card {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 0;
   }
 
   .projects-logo {
-    width: 85px;
-    height: 85px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 0.8rem auto;
   }
+
+  .projects-card-title {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .projects-card-desc {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .projects-header {
+    margin-bottom: 1.5rem;
+    padding: 0 5px;
+  }
+
+  .arrow-icon {
+    font-size: 1.1rem;
+  }
+}
+
+/* 🎯 Individual Logo Sizes (custom per project) */
+.projects-logo img[alt="Women Rider"] {
+  width: 140px;
+  height: auto;
+}
+
+.projects-logo img[alt="EPDC India"] {
+  width: 80px;
+  height: auto;
+}
+
+.projects-logo img[alt="Pratyaksha News"] {
+  width: 100px;
+  height: auto;
+}
+
+.projects-logo img[alt="Chaala Bagundhi"] {
+  width: 130px;
+  height: auto;
+}
+
+.projects-logo img[alt="V2 Overseas"] {
+  width: 150px;
+  height: auto;
+}
+
+.projects-logo img[alt="Real Temple"] {
+  width: 150px;
+  height: auto;
 }

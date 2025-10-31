@@ -7,10 +7,10 @@ export default function Leadership() {
       <div className="leadership-container">
         {/* Header */}
         <div className="leadership-header">
-          <h2 className="section-title">
+          <h2 className="leader-title">
             <span className="arrow-icon">▶</span> Leadership That Inspires Innovation
           </h2>
-          <p className="section-description">
+          <p className="leader-description">
             Our leaders drive excellence, inspire creativity, and shape the vision of our company.
           </p>
         </div>
@@ -19,7 +19,7 @@ export default function Leadership() {
         <div className="leadership-layout">
           {/* Left Image */}
           <div className="leader-photo">
-            <img src="https://via.placeholder.com/400x300" alt="Leader Left" />
+            <img src="/1.jpg" alt="Leader Left" />
           </div>
 
           {/* Middle Section */}
@@ -53,7 +53,7 @@ export default function Leadership() {
 
           {/* Right Image */}
           <div className="leader-photo">
-            <img src="https://via.placeholder.com/400x300" alt="Leader Right" />
+            <img src="/2.jpg" alt="Leader Right" />
           </div>
         </div>
       </div>

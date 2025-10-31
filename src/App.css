@@ -17,7 +17,7 @@ body[data-theme="light"] {
 
 /* 🌙 Dark Mode */
 body[data-theme="dark"] {
-  --bg-color: #0b0b0b;
+  --bg-color: #000;
   --text-color: #ffffff;
   --accent-color: #ff6f00;
 }

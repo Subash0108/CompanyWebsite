@@ -16,7 +16,7 @@
 }
 
 /* Title + icon */
-.section-title {
+.heading-title {
   font-size: 40px;
   font-weight: 600;
   color: var(--accent-color);
@@ -27,6 +27,20 @@
   justify-content: center;
   gap: 12px;
 }
+
+/* ✅ Added new text below heading */
+.section-subtext {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-top: -40px;
+  margin-bottom: 40px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
 .arrow-icon {
   color: var(--accent-color);
   font-size: 1.4rem;
@@ -223,150 +237,154 @@
 
 /* Tablets (1024px and below) */
 @media (max-width: 1024px) {
-  .section-title {
-    font-size: 32px;
-  }
-
-  .left-box,
-  .right-box {
-    width: 40%;
-  }
-
-  .timeline::before,
-  .timeline::after {
-    width: 4px;
-  }
+  .heading-title { font-size: 32px; }
+  .left-box, .right-box { width: 40%; }
+  .timeline::before, .timeline::after { width: 4px; }
 }
 
 /* Small tablets / large phones (768px and below) */
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 28px;
+  .heading-title { font-size: 28px; }
+  .section-subtext {
+    font-size: 0.95rem;
+    margin-top: -20px;
+    margin-bottom: 25px;
+    padding: 0 8px;
   }
 
-  .icon-start {
-    width: 60px;
-    height: 60px;
-  }
-
-  .icon-end {
-    width: 80px;
-    height: 80px;
-  }
+  .icon-start { width: 55px; height: 55px; }
+  .icon-end { width: 70px; height: 70px; }
 
   .timeline-step {
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
+    margin: 15px 0;
   }
 
-  .left-box,
-  .right-box {
-    width: 90%;
-    margin: 0;
+  .left-box, .right-box {
+    width: 92%;
+    margin: 0 auto;
     text-align: center;
+    padding: 10px 12px;
   }
 
-  .left-box h3,
-  .right-box p {
-    text-align: center;
-  }
+  .left-box h3, .right-box p { text-align: center; }
 }
 
-/* ✅ Mobile devices (480px and below) - FIXED VERSION */
+/* ✅ Mobile devices (480px and below) - Perfectly adjusted */
 @media (max-width: 480px) {
   .development-approach {
-    padding: 60px 15px;
+    padding: 40px 10px;
   }
 
-  .section-title {
-    font-size: 24px;
-    margin-bottom: 40px;
+  .heading-title {
+    font-size: 22px;
+    margin-bottom: 30px;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
   }
 
-  .title-img {
-    width: 30px;
-    height: 30px;
+  .section-subtext {
+    font-size: 0.9rem;
+    margin: -20px 0 20px 0;
+    padding: 0 10px;
   }
 
-  /* Keep timeline aligned left */
   .timeline {
     align-items: flex-start;
-    padding-left: 40px;
+    padding-left: 18px;
   }
 
   .timeline::before,
   .timeline::after {
-    left: 25px;
-    transform: none;
+    left: 14px;
     width: 3px;
   }
 
-  /* Each step vertical stacked properly */
   .timeline-step {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    margin: 30px 0;
-  }
-
-  /* Center + circle line section on left */
-  .center-line {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    margin-bottom: 10px;
+    margin: 12px 0; /* No extra space */
   }
 
   .circle {
-    width: 26px;
-    height: 26px;
-    margin-left: -12px; /* align perfectly with line */
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    margin-top: -50px;
   }
 
-  /* Ensure arrows align on line */
-  .arrow {
-    font-size: 0.9rem;
-    margin-top: 6px;
-    margin-left: -2px;
-  }
-
-  /* Boxes stack below heading */
   .left-box,
   .right-box {
     width: 100%;
-    margin: 10px 0 0 0;
+    margin: 6px 0;
     text-align: left;
-    padding: 12px 15px;
-    border-radius: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
+    opacity: 1 !important;
+    transform: translateY(0) !important;
   }
 
-  .left-box h3,
-  .right-box h3 {
+  .left-box h3, .right-box h3 {
     color: var(--accent-color);
     font-size: 1rem;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
-  .left-box p,
-  .right-box p {
-    font-size: 0.9rem;
+  .left-box p, .right-box p {
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 
-  /* Start / End icon alignment fix */
-  .start-icon,
-  .end-icon {
+  .icon-start, .icon-end {
+    width: 50px;
+    height: 50px;
+    margin-right: 0;
+    margin-left: -155px;
+  }
+
+  .start-icon, .end-icon {
     justify-content: flex-start;
-    padding-left: 10px;
+    padding-left: 0;
   }
 
-  .icon-start,
-  .icon-end {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
+  .end-icon {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+/* ☀️ Light Theme Fix */
+body[data-theme="light"] .development-approach {
+  background: #fff;
+  color: #000;
+}
+
+body[data-theme="light"] .section-subtext {
+  color: #000;
+}
+
+body[data-theme="light"] .timeline::before {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="light"] .left-box,
+body[data-theme="light"] .right-box {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+body[data-theme="light"] .right-box p {
+  color: #000;
+}
+
+body[data-theme="light"] .circle {
+  background: #fff;
+  border-color: var(--accent-color);
+}
+
+body[data-theme="light"] .arrow {
+  color: #000;
 }

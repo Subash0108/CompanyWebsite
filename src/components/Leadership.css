@@ -36,19 +36,30 @@ body[data-theme="light"] .leadership {
   margin-bottom: 4rem;
 }
 
-.section-title {
+.leader-title {
   font-size: 2.5rem;
   font-weight: 800;
   color: #ff6f00;
   margin: 1rem 0;
 }
 
-.section-description {
+.leader-description {
   opacity: 0.8;
   font-size: 1.1rem;
-  max-width: 600px;
+  max-width: 700px;
   margin: 1rem auto;
   line-height: 1.8;
+  transition: color 0.4s ease;
+}
+
+/* ✅ Dark mode: leader-description appears white */
+body[data-theme="dark"] .leader-description {
+  color: #fff;
+}
+
+/* ✅ Light mode: leader-description appears black */
+body[data-theme="light"] .leader-description {
+  color: #000;
 }
 
 /* ======================== */
@@ -71,21 +82,32 @@ body[data-theme="light"] .leadership {
   overflow: hidden;
   height: 380px;
   width: 100%;
+  position: relative;
 }
 
 .leader-photo:first-child {
-  transform: translateY(-150px); /* move up by 150px */
+  transform: translateY(-150px);
 }
 
-/* ✅ Move the right-side photo slightly to the right */
 .leader-photo:last-child {
-  transform: translateY(100px); /* adjust value as needed (20px–60px works well) */
+  transform: translateY(100px);
 }
 
 .leader-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Add downward arrow below each photo (desktop + mobile) */
+.leader-photo::after {
+  content: "⬇";
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #ff6f00;
+  margin-top: 0.6rem;
+  animation: bounceArrow 1.5s infinite;
 }
 
 /* ======================== */
@@ -96,7 +118,28 @@ body[data-theme="light"] .leadership {
   flex-direction: column;
   gap: 3rem;
   justify-content: center;
-  transform: translateY(-27px); /* Move the middle div slightly upward */
+  transform: translateY(-27px);
+  position: relative;
+}
+
+/* Add downward arrow below each matter card section */
+.leader-middle::after {
+  /* content: "⬇"; */
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #ff6f00;
+  margin-top: 0.6rem;
+  animation: bounceArrow 1.5s infinite;
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
 }
 
 .vision-mission-card {
@@ -140,7 +183,7 @@ body[data-theme="light"] .vision-mission-card {
 }
 
 /* ======================== */
-/* Arrow Styles             */
+/* Arrow Styles (Desktop)   */
 /* ======================== */
 .arrow-left,
 .arrow-right {
@@ -166,27 +209,44 @@ body[data-theme="light"] .vision-mission-card {
 /* ======================== */
 @media (max-width: 992px) {
   .leadership-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
   }
+
+  /* ✅ New: Enforce correct order photo → matter → photo → matter */
+  .leader-photo:nth-child(1) { order: 1; }
+  .leader-middle:nth-child(2) { order: 2; }
+  .leader-photo:nth-child(3) { order: 3; }
+  .leader-middle:nth-child(4) { order: 4; }
 
   .leader-photo {
     height: 300px;
     transform: none;
+    margin-bottom: 0.5rem;
   }
 
   .leader-middle {
-    transform: none; /* reset middle div position for mobile */
+    transform: none;
+    margin: 0.5rem 0;
   }
 
-  .section-title {
+  .arrow-left,
+  .arrow-right {
+    display: none;
+  }
+
+  .heading-title {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 576px) {
   .vision-mission-card {
-    padding: 1.5rem;
+    padding: 1.3rem;
+    margin: 0.5rem 0;
   }
 
   .section-description {
@@ -194,11 +254,6 @@ body[data-theme="light"] .vision-mission-card {
   }
 
   .leader-photo {
-    height: 250px;
-  }
-
-  .arrow-left,
-  .arrow-right {
-    display: none;
+    height: 240px;
   }
 }

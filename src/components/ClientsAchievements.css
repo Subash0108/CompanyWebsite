@@ -25,13 +25,14 @@
 }
 
 .clients-achievements-description {
-  color: #aaa;
+  color: #fff;
   font-size: 1.1rem;
   margin-bottom: 3rem;
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
+  text-align: center;
 }
 
 /* 🟧 Grid layout */
@@ -127,8 +128,11 @@ body[data-theme="light"] .clients-achievements-title {
   color: #ff6f00;
 }
 
-body[data-theme="light"] .clients-achievements-text {
-  color: #444;
+body[data-theme="light"] .clients-achievements-text, .clients-achievements-description {
+  color: #000;
+}
+body[data-theme="dark"] .clients-achievements-description {
+  color: #fff;
 }
 
 body[data-theme="light"] .clients-achievements-stars {
@@ -152,6 +156,11 @@ body[data-theme="light"] .clients-achievements-stars {
   .clients-achievements-description {
     font-size: 0.95rem;
     margin-bottom: 2rem;
+    max-width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
   }
 
   .clients-achievements-grid {
@@ -196,6 +205,9 @@ body[data-theme="light"] .clients-achievements-stars {
   .clients-achievements-description {
     font-size: 1rem;
     max-width: 500px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .clients-achievements-grid {

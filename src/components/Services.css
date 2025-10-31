@@ -35,7 +35,7 @@
   transition: color var(--transition-speed);
 }
 
-.section-description {
+.description {
   color: var(--subtext-color);
   font-size: 1.1rem;
   max-width: 700px;
@@ -221,7 +221,7 @@
     font-size: 2.2rem;
   }
 
-  .section-description {
+  .description {
     font-size: 1rem;
   }
 
@@ -244,8 +244,20 @@
 
 /* ✅ For mobile (≤ 768px) */
 @media (max-width: 768px) {
+  .services {
+    padding: 3.5rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* ✅ Added spacing between header, grid, and banner */
+  }
+
+  .services-header {
+    margin-bottom: 2rem;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 1.8rem; /* ✅ Better card spacing */
   }
 
   .section-title {
@@ -256,10 +268,16 @@
     font-size: 2.5rem;
   }
 
+  .service-card {
+    padding: 2rem;
+  }
+
   .service-bottom-banner {
     flex-direction: column;
     border-radius: 30px;
     padding: 1rem 1.5rem;
+    margin-top: 3rem; /* ✅ Section gap before banner */
+    gap: 1rem; /* ✅ Space between banner items */
   }
 
   .banner-arrow {
@@ -271,6 +289,7 @@
 @media (max-width: 600px) {
   .services {
     padding: 3rem 1rem;
+    gap: 1.8rem; /* ✅ Maintains uniform gaps between parts */
   }
 
   .services-header {
@@ -282,18 +301,18 @@
     line-height: 1.3;
   }
 
-  .section-description {
+  .description {
     font-size: 0.95rem;
     line-height: 1.6;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
+    gap: 1.4rem;
   }
 
   .service-card {
-    padding: 1.5rem;
+    padding: 1.6rem;
   }
 
   .service-number {
@@ -310,11 +329,12 @@
 
   .service-bottom-banner {
     flex-direction: column;
-    margin: 3rem 0 0 0;
+    margin-top: 3rem;
     padding: 1rem;
     border-radius: 25px;
     font-size: 1rem;
     text-align: center;
+    gap: 0.8rem; /* ✅ Even inner spacing */
   }
 
   .banner-arrow {
@@ -324,11 +344,16 @@
 
 /* ✅ For extra small devices (≤ 400px) */
 @media (max-width: 400px) {
+  .services {
+    padding: 2rem 0.8rem;
+    gap: 1.6rem;
+  }
+
   .section-title {
     font-size: 1.6rem;
   }
 
-  .section-description {
+  .description {
     font-size: 0.9rem;
   }
 
@@ -342,5 +367,12 @@
 
   .service-bottom-banner {
     font-size: 0.9rem;
+    padding: 0.8rem;
+    gap: 0.6rem;
   }
+}
+
+/* ✅ Force section description color in dark mode (pure white) */
+[data-theme="dark"] .description {
+  color: #fff !important;
 }

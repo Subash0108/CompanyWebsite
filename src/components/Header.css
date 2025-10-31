@@ -68,7 +68,7 @@
   display: inline-block;
   width: 42px;
   height: 22px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .theme-switch input {
@@ -186,57 +186,65 @@ body[data-theme="light"] .header .social-icons a:hover {
     height: 32px;
     font-size: 1rem;
   }
+   .theme-switch {
+    margin-top: 0.6rem;
+  }
 
   .header-logo {
     width: 100px;
-    top: 15px;
-    left: 20px;
+    top: 5px;
+    left: -9px;
   }
 }
 
-/* ✅ Mobile Phones / 480px — only changes here */
+/* ✅ Mobile Phones / 480px */
 @media (max-width: 480px) {
   .header {
     top: 10px;
     left: 0;
     right: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
+    padding: 0 1rem;
+  }
+    .theme-switch {
+    position: absolute;  /* make it independent from flex layout */
+    top: 10px;           /* adjust up/down */
+    right: -50px;         /* move it to the right */
+    margin-top: 0;
+    width: 40px;
+    height: 22px;
+    z-index: 10000;      /* keep it above other elements */
   }
 
   .header-logo {
     position: relative;
-    top: 0;
-    left: 0;
     width: 90px;
     height: auto;
   }
 
+  /* Container for menu and icons */
   .header .social-icons {
     position: relative;
-    background: rgba(0, 0, 0, 0.85);
-    border-radius: 9999px;
-    padding: 0.5rem 0.8rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.4rem;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
-  /* Menu toggle (3 dots) */
+  /* 3 dots icon (menu button) */
   .menu-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 1.4rem;
-    width: 36px;
-    height: 36px;
+    font-size: 1.6rem;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    background: transparent;
     cursor: pointer;
+    background: transparent;
+    z-index: 10000;
     transition: all 0.3s ease;
   }
 
@@ -244,32 +252,69 @@ body[data-theme="light"] .header .social-icons a:hover {
     color: var(--accent-color, #ff6f00);
   }
 
-  /* Hide extra icons by default */
+  /* Hide icons by default */
   .more-icons {
     display: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4rem;
-    margin-top: 6px;
-  }
-
-  /* Show when active */
-  .social-icons.active .more-icons {
-    display: flex;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 0.6rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 111, 0, 0.5);
     animation: fadeDown 0.4s ease-in-out;
   }
 
-  /* Icons sizing */
+  /* Show when menu is active */
+  .social-icons.active .more-icons {
+    display: flex;
+  }
+
   .header .social-icons a {
-    width: 30px;
-    height: 30px;
-    font-size: 1rem;
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header .social-icons a:hover {
+    background: #ff6f00;
+    color: #fff;
+    border-radius: 50%;
   }
 
   .theme-switch {
-    margin-left: 8px;
-    width: 38px;
-    height: 20px;
+    margin-top: 5rem;
+    width: 40px;
+    height: 22px;
+  }
+}
+
+/* Hide 3 dots on larger screens */
+@media (min-width: 481px) {
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .more-icons {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    gap: 0.8rem;
+  }
+  .theme-switch {
+    position: relative;
+    top: 15px;
+    margin-top: 0.6rem;
   }
 }
 
@@ -290,6 +335,9 @@ body[data-theme="light"] .header .social-icons a:hover {
     height: 30px;
     font-size: 1.2rem;
   }
+   .theme-switch {
+    margin-top: 0.6rem;
+  }
 }
 
 /* Animation */
@@ -302,4 +350,8 @@ body[data-theme="light"] .header .social-icons a:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.theme-switch {
+  position: relative;
+  top: -5px; /* move up — use positive value to move down */
 }

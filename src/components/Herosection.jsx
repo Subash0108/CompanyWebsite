@@ -13,7 +13,7 @@ export default function HeroSection() {
   return (
     <section className="hero-section">
       {/* Background Gradient */}
-      <div className="hero-background"></div>
+      <div className="herosection-background"></div>
       {/* Background Large NGS Text */}
       <span className="hero-bg-text">NUHVIN</span>
 

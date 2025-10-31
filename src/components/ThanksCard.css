@@ -1,7 +1,7 @@
 /* 🌙 Dark Mode (default) */
 .thanks-card {
   background: #0b0b0b;
-  min-height: 50vh;
+  min-height: 40vh;
   color: #fff;
   padding: 3rem 0rem;
   text-align: center;
@@ -9,7 +9,7 @@
 }
 
 .thanks-title {
-  font-size: 3rem;
+  font-size: 8rem;
   color: #ff6f00;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
@@ -23,7 +23,7 @@
 }
 
 .thanks-message {
-  font-size: 1.2rem;
+  font-size: 2rem;
   line-height: 1.8;
   max-width: 700px;
   margin: 0 auto;
@@ -74,22 +74,22 @@ body[data-theme="light"] .thanks-link:hover {
   }
 
   .thanks-title {
-    font-size: 2.6rem;
+    font-size: 5rem;
   }
 
   .thanks-message {
-    font-size: 1.1rem;
+    font-size: 2rem;
   }
 }
 
 /* 📱 Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .thanks-title {
-    font-size: 2.2rem;
+    font-size: 5rem;
   }
 
   .thanks-message {
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 0 1rem;
   }
 
@@ -101,15 +101,15 @@ body[data-theme="light"] .thanks-link:hover {
 /* 📲 Mobile Phones (max-width: 480px) */
 @media (max-width: 480px) {
   .thanks-card {
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
   }
 
   .thanks-title {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
   }
 
   .thanks-message {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
   }
 
@@ -125,14 +125,14 @@ body[data-theme="light"] .thanks-link:hover {
 /* 🖥️ Large screens (above 1200px) */
 @media (min-width: 1200px) {
   .thanks-card {
-    padding: 7rem 4rem;
+    padding: 5rem 0rem;
   }
 
   .thanks-title {
-    font-size: 3.2rem;
+    font-size: 8rem;
   }
 
   .thanks-message {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
 }

@@ -2,7 +2,7 @@
 .team-culture {
   background: var(--bg-color);
   color: var(--text-color);
-  padding: 3rem 2rem 6rem 0rem;
+  padding: 7rem 2rem 6rem 0rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -239,7 +239,7 @@ body.light .service-bottom-banner .banner-arrow {
 /* --- Mobile First --- */
 @media (max-width: 480px) {
   .team-culture {
-    padding: 5rem 1rem 4rem 1rem;
+    padding: 2rem 1rem 2rem 1rem;
   }
 
   .team-culture-container {
@@ -274,9 +274,20 @@ body.light .service-bottom-banner .banner-arrow {
     padding: 1.5rem;
   }
 
+  /* ✅ Fixed: keep numbers and matter side-by-side */
   .company-snapshot-table .row {
-    grid-template-columns: 1fr;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    text-align: left;
+    align-items: center;
+  }
+
+  .company-snapshot-table .label {
+    text-align: left;
+  }
+
+  .company-snapshot-table .value {
+    text-align: right;
   }
 
   .tech-icons {

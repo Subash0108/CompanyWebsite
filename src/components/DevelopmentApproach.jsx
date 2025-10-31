@@ -62,9 +62,15 @@ export default function DevelopmentApproach() {
 
   return (
     <section className="development-approach" ref={sectionRef}>
-      <h2 className="section-title">
+      <h2 className="heading-title">
         <span className="arrow-icon">▶</span> Our Development Approach
       </h2>
+
+      {/* ✅ Added sub-heading line below main title */}
+      <p className="section-subtext">
+        We believe great products are built through clarity, collaboration, and
+        consistency.
+      </p>
 
       <div className="approach-wrapper">
         {/* START ICON */}
